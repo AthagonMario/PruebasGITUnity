@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Pausa : MonoBehaviour
 {
-    bool paused = false;
+
 
     //public GameObject menu; // Assign in inspector
     private Canvas CanvasObject; // Assign in inspector
@@ -15,7 +15,7 @@ public class Pausa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        paused = false;
+
         CanvasObject = GetComponent<Canvas>();
         if (isShowing==false)
         {
@@ -32,7 +32,6 @@ public class Pausa : MonoBehaviour
         {        
             Debug.Log("Pausado");
             CanvasObject.enabled = true;
-            paused = true;
             isShowing = !isShowing;
             timer.pausa = true;
 
@@ -43,7 +42,6 @@ public class Pausa : MonoBehaviour
         Debug.Log("Resume game");
         CanvasObject.enabled = false;
         isShowing = false;
-        paused = false;
         timer.pausa = false;
     }
     public void ReturnToMain()
