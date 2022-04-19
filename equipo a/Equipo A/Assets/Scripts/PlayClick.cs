@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayClick : MonoBehaviour
 {
-   void Play()
+   public void Play()
     {
         SceneManager.LoadScene("Juego");
     }
