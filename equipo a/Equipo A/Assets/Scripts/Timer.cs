@@ -8,6 +8,18 @@ public class Timer : MonoBehaviour
     public float StartTime;
     public bool pausa = false;
     public static string tiempo;
+    public static Timer Instance
+    {
+        get;
+        set;
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        Instance = this;
+    }
+
     void Start()
     {
         StartTime = Time.time;
