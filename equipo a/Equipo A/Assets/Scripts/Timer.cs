@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float StartTime;
     public bool pausa = false;
+    public static string tiempo;
     void Start()
     {
         StartTime = Time.time;
@@ -25,6 +26,7 @@ public class Timer : MonoBehaviour
             string TimerString = string.Format("{00}:{01}:{02}", mins, segs, milisegs);
 
             GetComponent<Text>().text = TimerString.ToString();
+            tiempo = TimerString.ToString();
         }
     }
 }
