@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -317,6 +317,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 536165798}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &347627181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95caea99d9465c4f95c39aab53135c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 762759526}
 --- !u!1 &681874445
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +607,7 @@ GameObject:
   - component: {fileID: 762759523}
   - component: {fileID: 762759525}
   - component: {fileID: 762759524}
+  - component: {fileID: 762759526}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -662,6 +676,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762759522}
   m_CullTransparentMesh: 1
+--- !u!114 &762759526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762759522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0819cc7d17692c4dad4182ae9016b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartTime: 0
+  pausa: 0
 --- !u!1 &1242823250
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +964,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563571210
 GameObject:
