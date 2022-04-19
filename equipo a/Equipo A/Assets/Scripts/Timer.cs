@@ -5,20 +5,26 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Text timerText;
-    private float startTime;
+    public float StartTime;
+    public bool pausa = false;
     void Start()
     {
-        startTime = Time.time;
+        StartTime = Time.time;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        float t = Time.time - startTime;
-        string min = ((int)t / 60).ToString();
-        string sec = (t % 60).ToString("f2");
-        timerText.text = min + ":" + sec;
+        if (pausa == false)
+        {
+
+
+            float TimerControl = Time.time - StartTime;
+            string mins = ((int)TimerControl / 60).ToString("00");
+            string segs = (TimerControl % 60).ToString("00");
+            string milisegs = ((TimerControl * 100) % 100).ToString("00");
+
+            string TimerString = string.Format("{00}:{01}:{02}", mins, segs, milisegs);
+
+            GetComponent<Text>().text = TimerString.ToString();
+        }
     }
 }

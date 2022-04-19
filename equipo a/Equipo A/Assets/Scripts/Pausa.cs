@@ -10,7 +10,7 @@ public class Pausa : MonoBehaviour
     //public GameObject menu; // Assign in inspector
     private Canvas CanvasObject; // Assign in inspector
     private bool isShowing=false;
-
+    public Timer timer;
    
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class Pausa : MonoBehaviour
             CanvasObject.enabled = true;
             paused = true;
             isShowing = !isShowing;
+            timer.pausa = true;
 
         }
     }
@@ -43,9 +44,16 @@ public class Pausa : MonoBehaviour
         CanvasObject.enabled = false;
         isShowing = false;
         paused = false;
+        timer.pausa = false;
     }
     public void ReturnToMain()
     {
         SceneManager.LoadScene("Inicio");
+    }
+    public void Restart()
+    {
+        CanvasObject.enabled = false;
+        timer.pausa = false;
+        timer.StartTime = Time.time;
     }
 }
