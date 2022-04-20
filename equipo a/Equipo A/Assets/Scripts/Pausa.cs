@@ -7,21 +7,20 @@ public class Pausa : MonoBehaviour
 {
 
 
-    //public GameObject menu; // Assign in inspector
-    private Canvas CanvasObject; // Assign in inspector
+ 
+    private Canvas CanvasMenu;
     private bool isShowing=false;
-    public Timer timer;
-   
+    //public Timer timer;
+    //public GameController gc;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        CanvasObject = GetComponent<Canvas>();
+        CanvasMenu = GameObject.FindGameObjectWithTag("menupausa").GetComponent<Canvas>();
         if (isShowing==false)
         {
-            CanvasObject.enabled = false;
+            CanvasMenu.enabled = false;
         }
-
     }
 
     // Update is called once per frame
@@ -29,29 +28,30 @@ public class Pausa : MonoBehaviour
     {
        
         if (Input.GetKeyDown("escape"))
-        {        
-            Debug.Log("Pausado");
-            CanvasObject.enabled = true;
+        {
+            CanvasMenu.enabled = true;
             isShowing = !isShowing;
-            timer.pausa = true;
-
+            GameController.controller.Pausa(true);
         }
     }
     public void ResumeGame()
     {
-        Debug.Log("Resume game");
-        CanvasObject.enabled = false;
+        CanvasMenu.enabled = false;
         isShowing = false;
-        timer.pausa = false;
+        GameController.controller.Pausa(false);
     }
     public void ReturnToMain()
     {
-        SceneManager.LoadScene("Inicio");
+        GameController.controller.CargarEscena("Inicio");
+        GameController.controller.Pausa(true);
+
     }
     public void Restart()
     {
-        CanvasObject.enabled = false;
-        timer.pausa = false;
-        timer.StartTime = Time.time;
+        CanvasMenu.enabled = false;
+        GameController.controller.Pausa(true);
+        GameController.controller.IniciarTimer();
+        GameController.controller.Pausa(false);
+
     }
 }
