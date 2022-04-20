@@ -13,7 +13,6 @@ public class Enemigos : MonoBehaviour
     //
     
     Rigidbody rigiBody;
-    public GameObject textoMueres;
 
     [Range(0, 5)]
     public float velocidad;
