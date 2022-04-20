@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
 
         //Añadir Animator
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
